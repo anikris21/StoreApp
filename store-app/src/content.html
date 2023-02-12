@@ -1,0 +1,49 @@
+<style>
+    .root {
+        display:flex ;
+        flex-direction:column ;
+        height: 100vh ;
+    }
+
+    .content {
+        flex: 1 0 auto ;
+
+    }
+
+    footer {
+        flex-shrink:0   ;
+        padding: 20px 0 20px 0;
+        text-align: center ;
+        background-color: whitesmoke ;
+    }
+
+    * {
+        margin: 0  ;
+    }
+
+
+</style>
+
+<div class="root">
+
+    <div class="content">
+        <header>
+            App Store
+        </header>
+        <main>
+            <section>
+                Select an item: 
+                <select name="shoe" id="shoe">
+                    <option value="Nike">Nike</option>
+                    <option value="Adidas">Adidas</option>
+                </select>
+            </section>
+        </main>
+
+    </div>
+
+
+    <footer>
+        &copy; App Store
+    </footer>
+</div>
