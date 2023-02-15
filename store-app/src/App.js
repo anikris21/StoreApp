@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import React, {setState, useState} from 'react';
 import './App.css';
 import Footer from "./Footer";
 import Header from "./Header";
@@ -53,8 +54,11 @@ import Header from "./Header";
     }
   ]  ;
     
+
+  let[size, setSize] = useState("");
+
   function renderProduct(p) {
-    debugger;
+    // debugger;
 
     return (
       <div key={p.id} className="product">
@@ -76,7 +80,11 @@ import Header from "./Header";
         <main>
           <section id="filters">
             <label htmlFor="size">Filter by Size:</label>{" "}
-            <select id="size">
+            <select 
+              id="size"
+              value={size}
+              onChange= {(e) => setSize(e.target.value)}             
+            >
               <option value="">All sizes</option>
               <option value="7">7</option>
               <option value="8">8</option>
