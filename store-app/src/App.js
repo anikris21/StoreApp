@@ -3,7 +3,72 @@ import './App.css';
 import Footer from "./Footer";
 import Header from "./Header";
 
-function App() {
+ function App() {
+  // debugger;
+  // let  baseUrl = process.env.REACT_APP_API_BASE_URL;
+  // baseUrl =  "http://localhost:3001/";
+  // let products;
+  // const response = await fetch(baseUrl + "products");
+  // if (response.ok) {
+  //   products = response.json();
+  //   //return response.json();
+  // }
+  let products = [
+    {
+      "id": 1,
+      "category": "shoes",
+      "image": "shoe1.jpg",
+      "name": "Hiker",
+      "price": 94.95,
+      "skus": [
+        { "sku": "17", "size": 7 },
+        { "sku": "18", "size": 8 }
+      ],
+      "description": "This rugged boot will get you up the mountain safely."
+    },
+    {
+      "id": 2,
+      "category": "shoes",
+      "image": "shoe2.jpg",
+      "name": "Climber",
+      "price": 78.99,
+      "skus": [
+        { "sku": "28", "size": 8 },
+        { "sku": "29", "size": 9 }
+      ],
+      "description": "Sure-footed traction in slippery conditions."
+    },
+    {
+      "id": 3,
+      "category": "shoes",
+      "image": "shoe3.jpg",
+      "name": "Explorer",
+      "price": 145.95,
+      "skus": [
+        { "sku": "37", "size": 7 },
+        { "sku": "38", "size": 8 },
+        { "sku": "39", "size": 9 }
+      ],
+      "description": "Look stylish while stomping in the mud."
+    }
+  ]  ;
+    
+  function renderProduct(p) {
+    debugger;
+
+    return (
+      <div key={p.id} className="product">
+      <a href="/">
+          <img  src={`images/${p.image}`} alt="" />
+          <h3>{p.name}</h3>
+          <p>{p.price}</p>
+      </a>
+
+  </div>
+    );
+  }
+
+
   return (
     <>
       <div className="content">
@@ -18,6 +83,11 @@ function App() {
               <option value="9">9</option>
             </select>
           </section>
+          <section id="products">
+            {products.map(renderProduct)}
+          </section>
+          
+          
         </main>
       </div>
       <Footer />
